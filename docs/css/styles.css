@@ -1,3 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: Inter;
+    background: #F3F5FC;
+}
+main{
+    width:100%;
+    height:100%;
+    display: flex;
+ }
+
+.container{
+    display: flex;
+    width: 80%;
+    height: 90%;
+    margin: auto;
+
+}
+
+.encriptador_box{
+    width: 70%;
+}
+.solo_mayusculas {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #495057;
+}
+.button_box{
+    width: 680px;
+}
+.aviso_mayusculas{
+    display: flex;
+}
 .btn{
-    padding: 10px;
+    width: 328px;
+    height:67px;
+    border-radius: 24px;
+    gap: 8px;
+    background: #0A3871;
+    color: #FFFFFF;
+
+    font-weight: 400;
+
+}
+
+.mensajes_box{
+    width: 30%;
+    border-radius: 32px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 24px 32px -8px #00000014;
+
+}
+
+.mensajes_box > img{
+    width: 336px;
+    height: 304px;
+    margin: auto;
+}
+.sin_mensajes{
+    font-weight: 700;
+    font-size: 24px;
+    line-height:29px;
+    color: #343A40;
+}
+.ingresar_texto{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }
