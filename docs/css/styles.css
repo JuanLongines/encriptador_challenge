@@ -45,7 +45,22 @@ main{
     font-weight: 400;
 
 }
-
+.btn_desencriptar{
+    background: linear-gradient(0deg, #D8DFE8, #D8DFE8);
+/*linear-gradient(0deg, #0A3871, #0A3871),*/
+    color:#0A3871;
+    border: 1px solid #0A3871;
+}
+.btn_copiar{
+    padding: 24px;
+    width: 336px;
+    height:67px;
+    border-radius: 24px;
+    gap: 8px;
+    font-weight: 400;
+    border: 1px solid #0A3871;
+    background: transparent;
+}
 .mensajes_box{
     width: 30%;
     border-radius: 32px;
