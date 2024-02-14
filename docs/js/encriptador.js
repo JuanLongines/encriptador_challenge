@@ -1,6 +1,8 @@
 const caja_texto=document.querySelector("#caja_texto");
 const avisoVacio=document.querySelector(".aviso_vacio");
 const mensajeEncriptadoJs=document.querySelector(".mensaje_encriptado");
+const botonCopiarJs=document.querySelector(".btn_copiar");
+
 let textoEncriptado='';
 console.log('avisoVacio',avisoVacio)
 const encriptacionMapa = {
@@ -19,25 +21,36 @@ const desencriptacionMapa = {
     'ufat': 'u'
 };
 
+
 comprobarSiMensajeExiste();
 function encriptarTexto(){
     textoEncriptado= caja_texto.value.split('').map(char => encriptacionMapa[char] || char).join('');
-
-    console.log(textoEncriptado);
     comprobarSiMensajeExiste();
-    console.log('avisoVacio',avisoVacio);
+    caja_texto.value='';
+}
+
+function desencriptarTexto(){
+    console.log('caja: ',caja_texto.value)
+    textoEncriptado= caja_texto.value.split(/(enter|imes|ai|ober|ufat)/).map(word => desencriptacionMapa[word] || word).join('');
+    console.log('Hoberlai',textoEncriptado)
+    comprobarSiMensajeExiste();
+    caja_texto.value='';
 }
 
 function comprobarSiMensajeExiste(){
-    console.log('condition',textoEncriptado!=null &&
-        textoEncriptado!=='')
     if (textoEncriptado!=null &&
         textoEncriptado!==''){
-        console.log('condition',textoEncriptado!=null &&
-            textoEncriptado!=='')
         avisoVacio.style.display='none';
         mensajeEncriptadoJs.style.display='block';
         mensajeEncriptadoJs.innerHTML=textoEncriptado;
+        botonCopiarJs.style.display='block';
+    }else{
+        avisoVacio.style.display='block';
+        textoEncriptado='';
+        mensajeEncriptadoJs.innerHTML=textoEncriptado;
+        mensajeEncriptadoJs.style.display='none';
+        botonCopiarJs.style.display='none';
+
     }
 }
 

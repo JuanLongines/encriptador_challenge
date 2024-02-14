@@ -100,6 +100,7 @@ textarea:focus::placeholder {
     width: calc(100% - 40px);
     text-align: center;
     padding: 10px;
+    display: none;
 }
 .mensajes_box{
     width: 30%;
