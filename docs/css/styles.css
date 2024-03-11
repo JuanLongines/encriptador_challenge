@@ -1,3 +1,15 @@
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+* {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
 body{
     padding: 0;
     margin: 0;
@@ -5,9 +17,17 @@ body{
     font-family: Inter;
     background: #F3F5FC;
 }
+header{
+    padding-top: 30px;
+}
+.logo{
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 5%;
+}
 main{
     width:100%;
-    height:100%;
+    height:85%;
     display: flex;
  }
 
@@ -49,7 +69,7 @@ textarea:focus::placeholder {
     width: 70%;
 }
 .solo_mayusculas {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 18px;
     color: #495057;
@@ -65,6 +85,8 @@ textarea:focus::placeholder {
 }
 .aviso_mayusculas>img{
     margin-right: 8px;
+    width: 24px;
+    height: 24px;
 }
 .btn{
     width: 328px;
@@ -142,3 +164,5 @@ textarea:focus::placeholder {
     font-size: 16px;
     line-height: 24px;
 }
+
+
