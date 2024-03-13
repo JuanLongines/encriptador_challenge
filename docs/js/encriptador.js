@@ -1,10 +1,12 @@
-const caja_texto=document.querySelector("#caja_texto");
-const avisoVacio=document.querySelector(".aviso_vacio");
-const mensajeEncriptadoJs=document.querySelector(".mensaje_encriptado");
-const botonCopiarJs=document.querySelector(".btn_copiar");
-const copyTextareaBtn = document.querySelector('.btn_copiar');
+const textArea=document.querySelector('.textarea');
+const mensaje=document.querySelector('.mensaje');
+const imageContainer=document.querySelector('.image_container');
+const bttnEncriptar=document.querySelector('.btn-encriptar');
+const bttnDesencriptar=document.querySelector('.btn-desencriptar');
+const bttnCopiar = document.querySelector('.btn-copiar');
+const showCopiar = document.querySelector('.btn ');
 
-let textoEncriptado='';
+
 
 function encriptar(textoEncriptado){
     let matriz=[
@@ -44,52 +46,37 @@ function desencriptar(textoDesencriptado){
     return textoDesencriptado;
 }
 
-
-comprobarSiMensajeExiste();
-function encriptarTexto(){
-    textoEncriptado= encriptar(caja_texto.value);
-    comprobarSiMensajeExiste();
-    caja_texto.value='';
+function btnEncriptar(){
+    const textoEncriptado=encriptar(textArea.value);
+    mensaje.value=textoEncriptado;
 }
 
-function desencriptarTexto(){
-    textoEncriptado= desencriptar(caja_texto.value);
-    comprobarSiMensajeExiste();
-    caja_texto.value='';
+function btnDesencriptar(){
+    const textoDesencriptado=desencriptar(textArea.value);
+    mensaje.value=textoDesencriptado;
 }
 
-function comprobarSiMensajeExiste(){
-    if (textoEncriptado!=null &&
-        textoEncriptado!==''){
-        avisoVacio.style.display='none';
-        mensajeEncriptadoJs.style.display='block';
-        mensajeEncriptadoJs.innerHTML=textoEncriptado;
-        botonCopiarJs.style.display='block';
-    }else{
-        avisoVacio.style.display='block';
-        textoEncriptado='';
-        mensajeEncriptadoJs.innerHTML=textoEncriptado;
-        mensajeEncriptadoJs.style.display='none';
-        botonCopiarJs.style.display='none';
+bttnEncriptar.addEventListener("click", (event) => {
+    btnEncriptar();
+    textArea.value='';
+    imageContainer.style.display='none';
+    mensaje.style.display='block';
+    showCopiar.style.display='block';
+});
 
-    }
-}
-
-function copiarTextoEncriptado(){
-    var mensajeEncriptadoCopiar = document.querySelector('.mensaje_encriptado');
-    mensajeEncriptadoCopiar.focus();
-    mensajeEncriptadoCopiar.select();
-    document.execCommand('copy');
-
-}
+bttnDesencriptar.addEventListener("click", (event) => {
+    btnDesencriptar();
+    textArea.value='';
+    imageContainer.style.display='none';
+    mensaje.style.display='block';
+    showCopiar.style.display='block';
+});
 
 
-
-
-copyTextareaBtn.addEventListener("click", async (event) => {
-    var copyTextarea = document.querySelector('.mensaje_encriptado');
-    var text = copyTextarea.textContent;
-    var tempTextarea = document.createElement('textarea');
+bttnCopiar.addEventListener("click", async (event) => {
+    console.log('click copiar')
+    let text = mensaje.value;
+    const tempTextarea = document.createElement('textarea');
     tempTextarea.value = text;
     document.body.appendChild(tempTextarea);
     tempTextarea.select();
